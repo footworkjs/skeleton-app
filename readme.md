@@ -2,6 +2,13 @@ This repository contains the source code for the skeleton FootworkJS application
 
 Demo: [example-app.footworkjs.com](http://example-app.footworkjs.com)
 
+Specifications of (whats included in) this skeleton application:
+
+* Uses bower for frontend dependencies
+* Uses Gulp for tasks
+* Implements RequireJS + text plugin
+* Includes example router, viewModel, dataModel, and component
+
 ------
 
 ### Running this code/website
@@ -21,9 +28,9 @@ Make sure you have [node.js](http://nodejs.org/) and [bower](http://bower.io/) i
 npm install && bower install
 ```
 
-3) **Run the local webserver:**
+3) **Run the local webserver:** (if necessary)
 
-First off, make sure you have [Gulp](http://gulpjs.com) installed, then run:
+If you are not running this on a pre-existing server which already has an HTTP provider (Apache, nginx, etc) then you will need to run the local webserver in order to view the application. First off, make sure you have [Gulp](http://gulpjs.com) installed, then run:
 
 ```bash
 gulp webserver
