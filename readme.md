@@ -16,6 +16,8 @@ Files/directories of note:
 * ```public/scripts/component``` - Components folder
 * ```public/scripts/Router.js``` - Example router
 * ```public/scripts/viewModel.js``` - Example viewModel
+* ```public/scripts/require-config.js``` - RequireJS configuration
+* ```public/scripts/main.js``` - Application main starting module
 
 ------
 
