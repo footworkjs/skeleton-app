@@ -1,0 +1,13 @@
+{
+  "name": "example-app.footworkjs.com",
+  "version": "1.0",
+  "description": "FootworkJS Example Application",
+  "author": "Jonathan Newman <jonathan@staticty.pe>",
+  "dependencies": {
+    "footwork": "#17ed916799dcceb271998a1d8ee893343c57591f",
+    "moment": "2.10.6",
+    "bootstrap": "3.3.6",
+    "requirejs": "2.1.22",
+    "requirejs-text": "2.0.14"
+  }
+}
