@@ -5,6 +5,7 @@
     "gulp-less": "3.0.5",
     "requirejs": "2.1.22",
     "requirejs-text": "2.0.12",
+    "gulp-webserver": "0.9.1",
     "lodash": "3.10.1"
   }
 }

@@ -6,8 +6,6 @@ Demo: [example-app.footworkjs.com](http://example-app.footworkjs.com)
 
 ### Running this code/website
 
-You will need a system that has PHP 5.3 or later installed.
-
 1) **Clone the repo from here:**
 
 ```bash
@@ -23,6 +21,12 @@ Make sure you have [node.js](http://nodejs.org/) and [bower](http://bower.io/) i
 npm install && bower install
 ```
 
-3) **TODO:**
+3) **Run the local webserver:**
 
-FINISH INSTRUCTIONS
+First off, make sure you have [Gulp](http://gulpjs.com) installed, then run:
+
+```bash
+gulp webserver
+```
+
+You can now access the site at: [http://localhost:8000](http://localhost:8000) (or whatever host you have it running on, this assumes localhost)
