@@ -7,7 +7,15 @@ Specifications of (whats included in) this skeleton application:
 * Uses bower for frontend dependencies
 * Uses Gulp for tasks
 * Implements RequireJS + text plugin
-* Includes example router, viewModel, dataModel, and component
+  * Includes r.js for optimization and includes example working build.js
+* Includes example router, viewModel, and component
+
+Files/directories of note:
+
+* ```public/index.html``` - Main index HTML file
+* ```public/scripts/component``` - Components folder
+* ```public/scripts/Router.js``` - Example router
+* ```public/scripts/viewModel.js``` - Example viewModel
 
 ------
 
@@ -37,3 +45,20 @@ gulp webserver
 ```
 
 You can now access the site at: [http://localhost:8000](http://localhost:8000) (or whatever host you have it running on, this assumes localhost)
+
+### Other Included Tasks
+
+```bash
+# Compile the LESS into CSS and bundle/compile/optimize the javascript
+gulp
+```
+
+```bash
+# Compile the LESS into CSS
+gulp build-css
+```
+
+```bash
+# Bundle/optimize the javascript (the RequireJS config is located in public/scripts/require-config.js)
+gulp build-js
+```

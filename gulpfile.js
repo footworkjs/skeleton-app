@@ -4,7 +4,9 @@ var _ = require('lodash');
 var less = require('gulp-less');
 var webserver = require('gulp-webserver');
 
-gulp.task('default', ['less'], function() {
+gulp.task('default', ['build-css', 'build-js']);
+
+gulp.task('build-js', function() {
   var requireConfig = require(__dirname + '/public/scripts/require-config.js');
 
   return rjs.optimize(_.extend(requireConfig, {
@@ -20,7 +22,7 @@ gulp.task('default', ['less'], function() {
   }));
 });
 
-gulp.task('less', function() {
+gulp.task('build-css', function() {
   return gulp.src('./public/css/app.less')
     .pipe(less())
     .pipe(gulp.dest('./public/css'));
