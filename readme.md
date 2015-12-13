@@ -1,7 +1,5 @@
 This repository contains the source code for the skeleton FootworkJS application:
 
-Demo: [example-app.footworkjs.com](http://example-app.footworkjs.com)
-
 Specifications of (whats included in) this skeleton application:
 
 * Uses [Bower](http://bower.io/) for frontend dependencies

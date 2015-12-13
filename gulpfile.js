@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var rjs = require('requirejs');
 var _ = require('lodash');
 var less = require('gulp-less');
+var watch = require('gulp-watch');
 var webserver = require('gulp-webserver');
 var mochaPhantomJS = require('gulp-mocha-phantomjs');
 
@@ -27,6 +28,16 @@ gulp.task('build-css', function() {
   return gulp.src('./public/css/app.less')
     .pipe(less())
     .pipe(gulp.dest('./public/css'));
+});
+
+gulp.task('watch', ['watch-css', 'watch-js']);
+
+gulp.task('watch-css', function() {
+  gulp.watch('public/css/**/*.less', ['build-css']);
+});
+
+gulp.task('watch-js', function() {
+  gulp.watch('public/scripts/**/*.js', ['build-js']);
 });
 
 gulp.task('webserver', function() {
