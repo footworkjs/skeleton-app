@@ -28,7 +28,10 @@ gulp.task('build-js', function() {
 gulp.task('build-css', function() {
   return gulp.src('./public/css/app.less')
     .pipe(less({
-      paths: [ path.join(__dirname, 'public', 'scripts', 'app') ]
+      paths: [
+        // base inclusion path for component
+        path.join(__dirname, 'public', 'scripts', 'app', 'component')
+      ]
     }))
     .pipe(gulp.dest('./public/css'));
 });
