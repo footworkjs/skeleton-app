@@ -4,11 +4,12 @@ Demo: [example-app.footworkjs.com](http://example-app.footworkjs.com)
 
 Specifications of (whats included in) this skeleton application:
 
-* Uses bower for frontend dependencies
-* Uses Gulp for tasks
-* Implements RequireJS + text plugin
+* Uses [Bower](http://bower.io/) for frontend dependencies
+* Uses [Gulp](http://gulpjs.com/) for tasks
+* Uses [RequireJS](http://requirejs.org/) + [text plugin](https://github.com/requirejs/text) (so Footwork can automatically load assets)
   * Includes r.js for optimization and includes example working build.js
 * Includes example router, viewModel, and component
+* Includes Bootstrap3 via Bower
 
 Files/directories of note:
 

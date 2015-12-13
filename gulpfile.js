@@ -3,6 +3,7 @@ var rjs = require('requirejs');
 var _ = require('lodash');
 var less = require('gulp-less');
 var webserver = require('gulp-webserver');
+var mochaPhantomJS = require('gulp-mocha-phantomjs');
 
 gulp.task('default', ['build-css', 'build-js']);
 
@@ -38,4 +39,10 @@ gulp.task('webserver', function() {
       port: 8000,
       open: true
     }));
+});
+
+gulp.task('tests', function() {
+  return gulp
+    .src('spec/runner.html')
+    .pipe(mochaPhantomJS({ reporter: 'list' }));
 });
