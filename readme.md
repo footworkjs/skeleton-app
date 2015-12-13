@@ -1,4 +1,4 @@
-This repository contains the source code for the skeleton FootworkJS application. This repository is meant to be used as a base/example starting point for a FootworkJS web application. It includes several things pre-scaffolded and setup, including:
+This repository is meant to be used as a base/example starting point for a FootworkJS web application. It includes several things pre-scaffolded and setup, including:
 
 * Uses [Bower](http://bower.io/) for frontend dependencies
 * Uses [Gulp](http://gulpjs.com/) for tasks
@@ -48,8 +48,10 @@ You can now access the site at: [http://localhost:8000](http://localhost:8000) (
 
 ### Other Included Tasks
 
+The ```gulpfile.js``` included in this repository has several runnable tasks included with it, they are as follows:
+
 ```bash
-# Compile the LESS into CSS and bundle/compile/optimize the javascript
+# (default task) Compile the LESS into CSS, and bundle/compile/optimize the javascript
 gulp
 ```
 
