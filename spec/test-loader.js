@@ -3,8 +3,8 @@ require.config(REQUIRECONFIG);
 
 require([ "footwork" ],
   function( fw ) {
+    // export footwork to the global object so it is console-accessible
     window.fw = fw;
-    console.info(fw);
 
     if(typeof mochaPhantomJS !== 'undefined') {
       mochaPhantomJS.run();

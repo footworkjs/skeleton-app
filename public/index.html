@@ -16,9 +16,11 @@
 
   <body>
     <main>
-      Hello world!
-      
+      <viewModel module="ExampleViewModel">
+        Hello <span data-bind="text: something"></span>!
+      </viewModel>
     </main>
+    
     <script src="scripts/require-config.js"></script>
     <script src="bower_components/requirejs/require.js" data-main="/scripts/main"></script>
   </body>
