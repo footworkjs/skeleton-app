@@ -15,8 +15,8 @@ gulp.task('build-js', function() {
   return rjs.optimize(_.extend(requireConfig, {
     include: [ 'requireLib', 'text' ],
     baseUrl: 'public/scripts/',
-    name: 'main',
-    mainConfigFile: 'public/scripts/main.js',
+    name: 'app/main',
+    mainConfigFile: 'public/scripts/app/main.js',
     out: 'public/scripts/main-build.js',
     wrap: {
       start: "(function() {",
@@ -43,7 +43,7 @@ gulp.task('watch-css', function() {
 });
 
 gulp.task('watch-js', function() {
-  gulp.watch('public/scripts/**/*.js', ['build-js']);
+  gulp.watch(['public/scripts/app/**/*.js', 'public/scripts/require-config.js'], ['build-js']);
 });
 
 gulp.task('webserver', function() {
