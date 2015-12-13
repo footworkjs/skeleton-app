@@ -1,12 +1,11 @@
-This repository contains the source code for the skeleton FootworkJS application:
-
-Specifications of (whats included in) this skeleton application:
+This repository contains the source code for the skeleton FootworkJS application. This repository is meant to be used as a base/example starting point for a FootworkJS web application. It includes several things pre-scaffolded and setup, including:
 
 * Uses [Bower](http://bower.io/) for frontend dependencies
 * Uses [Gulp](http://gulpjs.com/) for tasks
 * Uses [RequireJS](http://requirejs.org/) + [text plugin](https://github.com/requirejs/text) (so Footwork can automatically load assets)
   * Includes r.js for optimization and includes example working build.js
-* Includes example router, viewModel, and component
+* Uses phantomjs and expect for unit tests (tests located in /spec)
+* Includes example viewModel, and component which are resolved and bootstrapped dynamically at run-time
 * Includes Bootstrap3 via Bower
 
 Files/directories of note:
