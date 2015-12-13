@@ -14,7 +14,7 @@ Files/directories of note:
 * ```public/scripts/main.js``` - Application main starting module
 * ```public/scripts/app/assets.js``` - Footwork viewModel/component/etc asset registrations
 * ```public/scripts/app/viewModel/ExampleViewModel.js``` - Example viewModel
-* ```public/scripts/component/my-component``` - Example component
+* ```public/scripts/app/component/my-component``` - Example component
 * ```public/scripts/require-config.js``` - RequireJS configuration
 
 ------
