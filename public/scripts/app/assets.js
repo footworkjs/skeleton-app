@@ -6,5 +6,10 @@
 define(["footwork"],
   function(fw) {
     fw.viewModel.registerLocation('ExampleViewModel', 'app/viewModel/ExampleViewModel.js');
+
+    fw.components.registerLocation('my-component', {
+      viewModel: 'app/component/my-component/',
+      template: 'app/component/my-component/'
+    });
   }
 );

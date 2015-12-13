@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <base href="/">
 
-    <title>FootworkJS Example Application</title>
+    <title>FootworkJS Skeleton Application</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -19,8 +19,10 @@
       <viewModel module="ExampleViewModel">
         Hello <span data-bind="text: something"></span>!
       </viewModel>
+
+      <my-component></my-component>
     </main>
-    
+
     <script src="scripts/require-config.js"></script>
     <script src="bower_components/requirejs/require.js" data-main="/scripts/main"></script>
   </body>

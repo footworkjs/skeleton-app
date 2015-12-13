@@ -12,11 +12,11 @@ Specifications of (whats included in) this skeleton application:
 Files/directories of note:
 
 * ```public/index.html``` - Main index HTML file
-* ```public/scripts/component``` - Components folder
-* ```public/scripts/Router.js``` - Example router
-* ```public/scripts/viewModel.js``` - Example viewModel
-* ```public/scripts/require-config.js``` - RequireJS configuration
 * ```public/scripts/main.js``` - Application main starting module
+* ```public/scripts/app/assets.js``` - Footwork viewModel/component/etc asset registrations
+* ```public/scripts/app/viewModel/ExampleViewModel.js``` - Example viewModel
+* ```public/scripts/component/my-component``` - Example component
+* ```public/scripts/require-config.js``` - RequireJS configuration
 
 ------
 
@@ -52,6 +52,22 @@ You can now access the site at: [http://localhost:8000](http://localhost:8000) (
 ```bash
 # Compile the LESS into CSS and bundle/compile/optimize the javascript
 gulp
+```
+
+```bash
+# Watch the CSS and Javascript files for changes and recompile the assets as needed
+gulp watch
+
+# Watch the CSS files for changes and recompile as needed
+gulp watch-css
+
+# Watch the Javascript files for changes and recompile as needed
+gulp watch-js
+```
+
+```bash
+# Run the unit tests under /spec (TODO: HOWTO/Info on testing with footwork)
+gulp tests
 ```
 
 ```bash

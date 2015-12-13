@@ -5,6 +5,7 @@ var less = require('gulp-less');
 var watch = require('gulp-watch');
 var webserver = require('gulp-webserver');
 var mochaPhantomJS = require('gulp-mocha-phantomjs');
+var path = require('path');
 
 gulp.task('default', ['build-css', 'build-js']);
 
@@ -26,14 +27,16 @@ gulp.task('build-js', function() {
 
 gulp.task('build-css', function() {
   return gulp.src('./public/css/app.less')
-    .pipe(less())
+    .pipe(less({
+      paths: [ path.join(__dirname, 'public', 'scripts', 'app') ]
+    }))
     .pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('watch', ['watch-css', 'watch-js']);
 
 gulp.task('watch-css', function() {
-  gulp.watch('public/css/**/*.less', ['build-css']);
+  gulp.watch('public/**/*.less', ['build-css']);
 });
 
 gulp.task('watch-js', function() {
