@@ -1,4 +1,4 @@
-This repository is meant to be used as a base/example starting point for a FootworkJS web application. It includes several things pre-scaffolded and setup, including:
+This is meant to be used as a base/example starting point for a FootworkJS web application. It includes several things pre-scaffolded and setup, including:
 
 * Uses [Bower](http://bower.io/) for frontend dependencies
 * Uses [Gulp](http://gulpjs.com/) for tasks
@@ -20,6 +20,8 @@ Files/directories of note:
 ------
 
 ### Running this code/website
+
+> *Note that steps 1 and 2 are not necessary if you installed via Yeoman.*
 
 1) **Clone the repo from here:**
 
