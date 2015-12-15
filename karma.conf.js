@@ -10,33 +10,46 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'requirejs'],
+    frameworks: ['jasmine', 'requirejs', 'fixture'],
 
 
     // list of files / patterns to load in the browser
     files: [
+      'public/scripts/require-config.js',
       'tests/test-main.js',
+      'tests/footwork-test-helper.js',
+      'node_modules/jquery/dist/jquery.js',
+      'tests/fixtures/**/*.html',
       {pattern: 'tests/**/*.spec.js', included: false},
-      {pattern: 'public/scripts/app/**/*.js', included: false}
+      {pattern: 'public/scripts/**/*.js', included: false},
+      {pattern: 'public/scripts/**/*.html', included: false, served: true},
+      {pattern: 'public/bower_components/**/*.js', included: false}
     ],
 
 
     // list of files to exclude
     exclude: [
-      'public/scripts/app/main.js'
+      'public/scripts/app/main.js',
     ],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'tests/**/*.html'   : ['html2js'],
+      '**/*.json'   : ['json_fixtures']
+    },
+
+
+    jsonFixturesPreprocessor: {
+      variableName: '__json__'
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['spec'],
 
 
     // web server port
@@ -49,7 +62,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_WARN,
 
 
     // enable / disable watching file and executing tests whenever any file changes
