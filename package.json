@@ -1,28 +1,38 @@
 {
   "private": true,
   "dependencies": {
-    "gulp": "3.9.0",
+    "gulp": "*",
     "requirejs": "2.1.22",
     "requirejs-text": "2.0.12",
     "lodash": "3.10.1",
     "path": "*"
   },
   "devDependencies": {
-    "gulp-webserver": "0.9.1",
     "expect": "1.13.2",
-    "gulp-watch": "4.3.5",
     "gulp-less": "3.0.5",
+    "gulp-notify": "2.2.0",
+    "gulp-plumber": "1.0.1",
+    "gulp-requirejs-optimize": "0.3.1",
+    "gulp-sourcemaps": "1.5.2",
+    "gulp-watch": "4.3.5",
+    "gulp-webserver": "0.9.1",
     "jasmine-core": "^2.4.1",
-    "karma": "^0.13.15",
+    "jquery": "2.1.4",
+    "jquery-mockjax": "2.0.1",
+    "karma": "^0.13.16",
+    "karma-coverage": "^0.5.3",
     "karma-fixture": "^0.2.5",
     "karma-html2js-preprocessor": "^0.1.0",
     "karma-jasmine": "^0.3.6",
+    "karma-jasmine-jquery": "^0.1.1",
     "karma-json-fixtures-preprocessor": "0.0.5",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "karma-requirejs": "^0.2.2",
+    "karma-phantomjs-launcher": "^0.2.2",
+    "karma-requirejs": "^0.2.5",
     "karma-spec-reporter": "0.0.23",
-    "jquery": "2.1.4",
-    "phantomjs": "^1.9.19"
+    "less-plugin-autoprefix": "1.5.1",
+    "less-plugin-clean-css": "1.5.1",
+    "phantomjs": "^1.9.19",
+    "requirejs": "^2.1.22"
   },
   "scripts": {
     "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"

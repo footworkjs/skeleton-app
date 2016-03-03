@@ -1,0 +1,29 @@
+subreddit {
+  subreddit-post .panel {
+    border-radius: 0;
+
+    &:hover {
+      border-color: darken(@panel-default-border, 20%);
+    }
+
+    .panel-heading {
+      display: block;
+      color: contrast(@panel-default-heading-bg);
+    }
+
+    .panel-body {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .score {
+      float: right;
+      color: #aaa;
+
+      span {
+        color: black;
+        font-weight: bold;
+      }
+    }
+  }
+}

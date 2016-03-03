@@ -10,37 +10,62 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'requirejs', 'fixture'],
+    frameworks: ['jasmine-jquery', 'jasmine', 'requirejs', 'fixture'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'public/scripts/require-config.js',
-      'tests/test-main.js',
-      'tests/footwork-test-helper.js',
-      'node_modules/jquery/dist/jquery.js',
-      'tests/fixtures/**/*.html',
-      {pattern: 'tests/**/*.spec.js', included: false},
-      {pattern: 'public/scripts/**/*.js', included: false},
-      {pattern: 'public/scripts/**/*.html', included: false, served: true},
-      {pattern: 'public/bower_components/**/*.js', included: false}
+      { pattern: 'public/app/config/require-config.js', nocache: true },
+
+      // test assets and fixtures
+      { pattern: 'tests/include/test-main.js', nocache: true },
+      { pattern: 'tests/include/footwork-test-helper.js', nocache: true },
+      { pattern: 'tests/include/footwork-test-helper.js', nocache: true },
+      'tests/fixtures/**/*.+(html|json|jsonp)',
+      { pattern: 'tests/**/*.spec.js', included: false, nocache: true },
+      { pattern: 'node_modules/jquery-mockjax/dist/*.js', watched: false, included: false },
+      { pattern: 'public/images/**/*', included: false, watched: false, served: true },
+
+      // application source code
+      { pattern: 'public/app/**/*.+(html|js|json|jsonp)', included: false, served: true, nocache: true },
+      { pattern: 'public/pages/**/*.+(html|js|json|jsonp)', included: false, served: true, nocache: true },
+
+      // bower components
+      { pattern: 'public/bower_components/footwork/+(dist|build)/*.js', watched: false, included: false },
+      { pattern: 'public/bower_components/history.js/scripts/bundled/**/*.js', watched: false, included: false },
+      { pattern: 'public/bower_components/postal.js/lib/*.js', watched: false, included: false },
+      { pattern: 'public/bower_components/lodash/**/*.js', watched: false, included: false },
+      { pattern: 'public/bower_components/knockout/dist/*.js', watched: false, included: false },
+      { pattern: 'public/bower_components/knockout.punches/*.js', watched: false, included: false },
+      { pattern: 'public/bower_components/reqwest/reqwest.js', watched: false, included: false },
+      { pattern: 'public/bower_components/jquery/dist/*.js', watched: false, included: false },
+      { pattern: 'public/bower_components/requirejs/*.js', watched: false, included: false },
+      { pattern: 'public/bower_components/requirejs-text/*.js', watched: false, included: false },
+      { pattern: 'public/bower_components/bootstrap/dist/**/*.js', watched: false, included: false },
     ],
+
+    // urls to proxy/map automatically
+    proxies: {
+      '/images/': '/base/public/images/'
+    },
 
 
     // list of files to exclude
     exclude: [
-      'public/scripts/app/main.js',
+      'public/app.js'
     ],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'tests/**/*.html'   : ['html2js'],
-      '**/*.json'   : ['json_fixtures']
+      'tests/fixtures/**/*.html'   : ['html2js'],
+      'tests/fixtures/**/*.json'   : ['json_fixtures']
+      // 'public/app/**/*.js': ['coverage']
     },
 
 
+    // used by the fixture framework
     jsonFixturesPreprocessor: {
       variableName: '__json__'
     },
@@ -49,7 +74,13 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec'],
+    reporters: ['spec'/*, 'coverage'*/],
+
+
+    // coverageReporter: {
+    //   type : 'html',
+    //   dir : 'tests/coverage/'
+    // },
 
 
     // web server port
@@ -68,6 +99,17 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
+    // Which plugins to enable
+    plugins: [
+      'karma-phantomjs-launcher',
+      'karma-jasmine-jquery',
+      'karma-jasmine',
+      'karma-requirejs',
+      'karma-fixture',
+      'karma-html2js-preprocessor',
+      'karma-json-fixtures-preprocessor',
+      'karma-spec-reporter'
+    ],
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher

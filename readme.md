@@ -4,18 +4,23 @@ This is meant to be used as a base/example starting point for a FootworkJS web a
 * Uses [Gulp](http://gulpjs.com/) for tasks
 * Uses [RequireJS](http://requirejs.org/) + [text plugin](https://github.com/requirejs/text) (so Footwork can automatically load assets)
   * Includes r.js for optimization and includes example working build.js
-* Uses phantomjs and expect for unit tests (tests located in /tests)
 * Includes example viewModel, and component which are resolved and bootstrapped dynamically at run-time
+* Includes the [Karma](http://karma-runner.github.io) test runner, all pre-configured and ready to run out of the box.
+  * [Jasmine](http://jasmine.github.io/) testing framework
+  * [jasmin-jquery](https://github.com/velesin/jasmine-jquery) for DOM validations
 * Includes Bootstrap3 via Bower
+* CSS concatentation and minification
+* CSS prefixing during build
 
 Files/directories of note:
 
 * ```public/index.html``` - Main index HTML file
-* ```public/scripts/main.js``` - Application main starting module
-* ```public/scripts/app/assets.js``` - Footwork viewModel/component/etc asset registrations
-* ```public/scripts/app/viewModel/ExampleViewModel.js``` - Example viewModel
-* ```public/scripts/app/component/my-component``` - Example component
-* ```public/scripts/require-config.js``` - RequireJS configuration
+* ```public/app/main.js``` - Application main starting module
+* ```public/app/router.js``` - router module
+* ```public/app/config/assets-config.js``` - Footwork viewModel/component/etc asset registrations
+* ```public/app/config/require-config.js``` - RequireJS configuration
+* ```public/app/app/component/navigation``` - Navigation component
+* ```tests``` - Unit tests
 
 ------
 
@@ -52,16 +57,10 @@ You can now access the site at: [http://localhost:8000](http://localhost:8000) (
 
 The included test runner is [Karma](http://karma-runner.github.io/), to run the unit tests you can either:
 
-Run them manually via Gulp:
-```bash
-# Run the unit tests under /tests
-gulp tests
-```
-
-Run them via Karma directly. Note that you need to have Karma CLI installed:
+Run them via Karma directly (recommended). Note that you need to have Karma CLI installed:
 ```bash
 # If you need to install Karma CLI, use the following command
-npm install -g karma-cli
+sudo npm install -g karma-cli
 ```
 
 ```bash
@@ -69,9 +68,21 @@ npm install -g karma-cli
 karma start
 ```
 
+Run them manually via Gulp:
+```bash
+# Run the unit tests under /tests
+gulp tests
+```
+
 Run the ```watch-and-test``` task which compiles everything and runs the tests everytime a change is detected:
 ```bash
 gulp watch-and-test
+```
+
+**NOTE:** If you get a 'No binary for PhantomJS browser on your platform' error, do the following:
+```bash
+sudo npm install -g phantomjs
+export PHANTOMJS_BIN=`which phantomjs`
 ```
 
 ### Other Included Tasks
@@ -84,13 +95,13 @@ gulp
 ```
 
 ```bash
-# Watch the CSS and Javascript files for changes and recompile as needed
+# Watch the styles and Javascript files for changes and recompile as needed
 gulp watch
 ```
 
 ```bash
-# Watch the CSS files for changes and recompile as needed
-gulp watch-css
+# Watch the styles files for changes and recompile as needed
+gulp watch-styles
 ```
 
 ```bash
@@ -100,7 +111,7 @@ gulp watch-js
 
 ```bash
 # Compile the LESS into CSS
-gulp build-css
+gulp build-styles
 ```
 
 ```bash

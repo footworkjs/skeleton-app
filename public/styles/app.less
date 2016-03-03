@@ -1,0 +1,29 @@
+// NOTE: Paths for @import directives are specified in gulpfile.js in the 'build-css' task
+
+// Footwork animations
+@import "../bower_components/footwork/build/animation/animation.less";
+
+// Twitter Bootstrap
+@import "../bower_components/bootstrap/less/bootstrap.less";
+@icon-font-path: "../bower_components/bootstrap/dist/fonts/";
+
+@page-width: 940px;
+@navbar-height: 40px;
+@footer-height: 100px;
+
+html {
+  overflow-y: scroll;
+}
+
+@import "include/force-footer-down.less";
+@import "include/spinner.less";
+
+// Styles for primary areas of the application
+@import "module/header.less";
+@import "module/main.less";
+@import "module/footer.less";
+@import "module/loading-display.less";
+
+// Component style inclusions
+@import "navigation/navigation.less";
+@import "subreddit/subreddit.less";
